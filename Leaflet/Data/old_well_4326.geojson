@@ -1,0 +1,23 @@
+var planetarium = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "planetarium" }, "geometry": { "type": "Point", "coordinates": [ -79.05025, 35.91399 ] } }
+]
+}
+
+var hanesartcenter = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "hanes art center" }, "geometry": { "type": "Point", "coordinates": [ -79.05443, 35.91236 ] } }
+]
+}
+
+var schooloflaw = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "descrip": "school of law" }, "geometry": { "type": "Point", "coordinates": [ -79.0427164958, 35.908246367 ] } }
+]
+}
