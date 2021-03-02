@@ -26,7 +26,7 @@
 <body>
   <div id="map"></div>
   <script>
-      var map = L.map('map').setView([46.40541718624819, -85.49085011175026], 14.0);
+      var map = L.map('map').setView([42.3518212,-71.0520097], 14.0);
       
         var image = L.tileLayer('{z}/{x}/{y}.png', {
         minZoom: 12,
@@ -40,21 +40,36 @@
       }).addTo(map);
 
       var tiles = {
-        "boston 1978 aerial image":image, 
+        "Boston 1978 Aerial Image":image, 
         "ESRI world imagery":ESRI, 
       }
 
 
       var Icon1 = L.icon({
-            iconUrl:'https://webstockreview.net/images/art-clipart-black-and-white-1.jpg',
+            iconUrl:'https://img.favpng.com/17/8/21/png-logo-png-favpng-bnQXBdspUxidhRGqSV3Z6hM3w.jpg',
             iconSize:[50,50],
             popupAnchor: [0,0]
             });
 
-      var Popup1 = "Hanes Art Center<br/><img src='https://pbs.twimg.com/media/CDNmFl2W0AEdQHZ.jpg'width='100px'/>";
-
+      var Popup1 = "Boston Tea Party Ships & Museum<br/><img src='https://calendar.artsboston.org/wp-content/uploads/sites/calendar.artsboston.org/images/Boston-Tea.jpg'width='100px'/>";
       
-      var marker1 = L.marker([42.3515197,-71.0522478], {
+      var Icon2 = L.icon({
+            iconUrl:'https://www.pinclipart.com/picdir/middle/81-812986_parks-black-and-white-park-logo-clipart.png',
+            iconSize:[50,50],
+            popupAnchor: [0,0]
+            });
+
+      var Park = "Binford Street Park<br/><img src='https://fastly.4sqi.net/img/general/600x600/1780240_rhegmrgsIbI9XG5eieXSN6uYiRBiboIVMovK0uEwVOM.jpg'width='100px'/>";
+      
+      var Icon3 = L.icon({
+            iconUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6mk5gd_m5PEFrF_V-5hHXbhA58MRDdzvkZQ&usqp=CAU',
+            iconSize:[50,50],
+            popupAnchor: [0,0]
+            });
+
+      var bnb = "InterContinental Boston<br/><img src='https://2486634c787a971a3554-d983ce57e4c84901daded0f67d5a004f.ssl.cf1.rackcdn.com/_intercontinental/media/icb-boston-gallery1-5de9437fb556d.jpg'width='100px'/>";
+      
+      var marker1 = L.marker([42.3522703,-71.0517657], {
         icon: Icon1,
         pointToLayer: function (feature, latlng) {
         return L.marker(latlng);}})
@@ -62,12 +77,37 @@
       .addTo(map);
 
       var markers = {
-        "ci design":marker1
+        "Boston Tea Party Ships & Museum":marker1
       }
 
+      L.control.layers(tiles, markers).addTo(map);
 
+      var marker2 = L.marker([42.3475726,-71.0532806], {
+        icon: Icon2,
+        pointToLayer: function (feature, latlng) {
+        return L.marker(latlng);}})
+      .bindPopup(Park) 
+      .addTo(map);
+
+      var markers = {
+        "Binford Street Park":marker2
+      }
 
       L.control.layers(tiles, markers).addTo(map);
+
+      var marker3 = L.marker([42.3537329,-71.0522798], {
+        icon: Icon3,
+        pointToLayer: function (feature, latlng) {
+        return L.marker(latlng);}})
+      .bindPopup(bnb) 
+      .addTo(map);
+
+      var markers = {
+        "InterContinental Boston":marker3
+      }
+    
+      L.control.layers(tiles, markers).addTo(map);
+  
   </script>
 </body>
 </html>
